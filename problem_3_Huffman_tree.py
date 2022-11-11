@@ -66,7 +66,7 @@ def huffman_encoding(data):
     if len(heap) == 1:
         freq, char = heapq.heappop(heap)
         root = TreeNode(0)
-        root.left = (56, char)
+        root.left = (freq, char)
         code = b"0" * len(data)
         return bytes(code), root
 

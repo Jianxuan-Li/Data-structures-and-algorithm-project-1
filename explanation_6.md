@@ -1,0 +1,1 @@
+The time complexity and space complexity are O(n), becuase we traverse the linked list and list cost O(n), and the set costs O(1) when we add a new element, so the worst time complexity is O(n).

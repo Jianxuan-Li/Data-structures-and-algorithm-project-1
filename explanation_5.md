@@ -1,0 +1,1 @@
+The time complexity and space complexity is always O(n), because we just treverse the linked list in constant times.

@@ -1,0 +1,1 @@
+The time complexity and the space complexity are O(n), becuase we just traverse the tree once.

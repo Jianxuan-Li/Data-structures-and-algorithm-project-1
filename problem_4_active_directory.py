@@ -58,10 +58,19 @@ def is_user_in_group(user, group):
 child.add_user("test3")
 
 # Test Case 1
+"""
+True
+"""
 print(is_user_in_group(sub_child_user, parent))
 
 # Test Case 2
+"""
+False
+"""
 print(is_user_in_group("no-thing", parent))
 
 # Test Case 3
+"""
+True
+"""
 print(is_user_in_group("test3", parent))

@@ -55,6 +55,7 @@ class BlockChain:
 # and two of them must include edge cases, such as null, empty or very large values
 
 def test(chain, data_to_find):
+    print("------")
     print("size: {}".format(chain.get_size()))
     for block in chain.get_blocks():
         print("data:{} | hash:{} | timestamp:{} | previous_hash:{}".format(
@@ -62,10 +63,18 @@ def test(chain, data_to_find):
 
     print("has {}? result:{}".format(data_to_find, chain.has_record(data_to_find)))
     print("has {}? result:{}".format("no-thing", chain.has_record("no-thing")))
+    print("------")
     
 data_to_find = "income:-20.0,current_blance:15.0,new_blance:-5.0"
 
 # Test Case 1
+"""
+size: 2
+data:income:-20.0,current_blance:15.0,new_blance:-5.0 | hash:5ff57e9d1b36f62db4f5e3117beaac421ef6586a53b76608d37bcc6e3682722f | timestamp:1668279374.9580102 | previous_hash:60bcea4b1e787094ca1da922fa0267eccc9f1ff87898ad35fafd7309b1357845
+data:income:10.0,current_blance:5.0,new_blance:15.0 | hash:60bcea4b1e787094ca1da922fa0267eccc9f1ff87898ad35fafd7309b1357845 | timestamp:1668279374.9579942 | previous_hash:None
+has income:-20.0,current_blance:15.0,new_blance:-5.0? result:True
+has no-thing? result:False
+"""
 block1 = Block("income:10.0,current_blance:5.0,new_blance:15.0")
 block2 = Block("income:-20.0,current_blance:15.0,new_blance:-5.0", block1.hash, block1)
 
@@ -76,10 +85,21 @@ chain1.append(block2)
 test(chain1, data_to_find)
 
 # Test Case 2
+"""
+size: 0
+has income:-20.0,current_blance:15.0,new_blance:-5.0? result:False
+has no-thing? result:False
+"""
 chain2 = BlockChain()
 test(chain2, data_to_find)
 
 # Test Case 3
+"""
+size: 10
+data:income:10,current_blance:90,new_blance:100 | hash:b7a7731d30f90e55e98ac8dd94bbfc6a60eb80bf080526b39204bd024005aab8 | timestamp:1668279374.9582925 | previous_hash:None
+has income:10,current_blance:90,new_blance:100? result:True
+has no-thing? result:False
+"""
 chain3 = BlockChain()
 for i in range(10):
     data = "income:{},current_blance:{},new_blance:{}".format(10, 10 * i, 10 * i + 10)
@@ -88,3 +108,4 @@ for i in range(10):
     i += 1
     
 test(chain3, data)
+    

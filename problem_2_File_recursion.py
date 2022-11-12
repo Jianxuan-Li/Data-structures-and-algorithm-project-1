@@ -40,13 +40,25 @@ def find_files(suffix, path):
 # and two of them must include edge cases, such as null, empty or very large values
 
 # Test Case 1
+"""
+['a.c', 'b.c', 't1.c', 'a.c']
+"""
 print(find_files(".c", "./testdir"))
 
 # Test Case 2
+"""
+['a.h', 'b.h', 't1.h', 'a.h']
+"""
 print(find_files(".h", "./testdir"))
 
 # Test Case 3
+"""
+[]
+"""
 print(find_files(".py", "./testdir"))
 
-# Test Case 3
+# Test Case 4
+"""
+[]
+"""
 print(find_files(".py", "./no-thing"))

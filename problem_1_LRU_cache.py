@@ -1,20 +1,28 @@
+from collections import OrderedDict
+
 class LRU_Cache(object):
     def __init__(self, capacity):
         self.capacity = capacity
-        self.values = {}
+        self.values = OrderedDict()
 
     def get(self, key):
-        return self.values[key] if key in self.values else -1
+        if key not in self.values:
+            return -1
+        
+        value = self.values.pop(key)
+        self.values[key] = value
+        
+        return value
 
     def set(self, key, value):
         # Set the value if the key is not present in the cache. If the cache is at capacity remove the oldest item.
         if key in self.values:
+            self.values.pop(key)
             self.values[key] = value
             return
 
         if len(self.values) >= self.capacity:
-            first_key = next(iter(self.values))
-            del self.values[first_key]
+            self.values.popitem(last=False)
             self.values[key] = value
         else:
             self.values[key] = value
@@ -43,13 +51,13 @@ print(our_cache.get(3))
 # and two of them must include edge cases, such as null, empty or very large values
 
 # Test Case 1
-our_cache.set(1, None)
+our_cache.set(1, None) # None
 print(our_cache.get(1))
 
 # Test Case 2
 our_cache.set(19, 999999999999999999999999)
-print(our_cache.get(19))
+print(our_cache.get(19)) # 999999999999999999999999
 
 # Test Case 3
 our_cache.set(-8, 1)
-print(our_cache.get(-8))
+print(our_cache.get(-8)) # 1

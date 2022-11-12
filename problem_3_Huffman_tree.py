@@ -6,7 +6,7 @@ class TreeNode:
         self.val = val
         self.left = None
         self.right = None
-        
+
     def __str__(self):
         return str(self.val)
     
@@ -138,26 +138,161 @@ if __name__ == "__main__":
         
     
     test("The bird is the word")
+    """
+    The size of the data is: 69
+
+    The content of the data is: The bird is the word
+
+    The size of the encoded data is: 36
+
+    The content of the encoded data is: b'0010111001111000111111100010110111110111100000111001111000011010100010'
+
+    The size of the decoded data is: 69
+
+    The content of the encoded data is: The bird is the word
+    """
     # Add your own test cases: include at least three test cases
     # and two of them must include edge cases, such as null, empty or very large values
 
     # Test Case 1
     test("ABCD")
+    """
+    The size of the data is: 53
+
+    The content of the data is: ABCD
+
+    The size of the encoded data is: 28
+
+    The content of the encoded data is: b'00011011'
+
+    The size of the decoded data is: 53
+
+    The content of the encoded data is: ABCD
+    """
 
     # Test Case 2
     test("AAAAAAABBBCCCCCCCDDEEEEEE")
+    """
+    The size of the data is: 74
+
+    The content of the data is: AAAAAAABBBCCCCCCCDDEEEEEE
+
+    The size of the encoded data is: 32
+
+    The content of the encoded data is: b'1010101010101000100100111111111111111000000010101010101'
+
+    The size of the decoded data is: 74
+
+    The content of the encoded data is: AAAAAAABBBCCCCCCCDDEEEEEE
+    """
 
     # Test Case 3
     test("AB")
+    """
+    The size of the data is: 51
+
+    The content of the data is: AB
+
+    The size of the encoded data is: 28
+
+    The content of the encoded data is: b'01'
+
+    The size of the decoded data is: 51
+
+    The content of the encoded data is: AB
+    """
     
     # Test Case 4
     test("DDDDEEEEBBBBB")
+    """
+    The size of the data is: 62
+
+    The content of the data is: DDDDEEEEBBBBB
+
+    The size of the encoded data is: 28
+
+    The content of the encoded data is: b'101010101111111100000'
+
+    The size of the decoded data is: 62
+
+    The content of the encoded data is: DDDDEEEEBBBBB
+    """
     
     # Test Case 5
     test("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+    """
+    The size of the data is: 105
+
+    The content of the data is: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+    The size of the encoded data is: 24
+
+    The content of the encoded data is: b'00000000000000000000000000000000000000000000000000000000'
+
+    The size of the decoded data is: 105
+
+    The content of the encoded data is: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    """
 
     # Test Case 6
     test("a")
+    """
+    The size of the data is: 50
+
+    The content of the data is: a
+
+    The size of the encoded data is: 24
+
+    The content of the encoded data is: b'0'
+
+    The size of the decoded data is: 50
+
+    The content of the encoded data is: a
+    """
     
     # Test Case 8    
     test("0000")
+    """
+    The size of the data is: 53
+
+    The content of the data is: 0000
+
+    The size of the encoded data is: 24
+
+    The content of the encoded data is: b'0000'
+
+    The size of the decoded data is: 53
+
+    The content of the encoded data is: 0000
+    """
+
+    # Test case 9
+    test("This is A gooD test CaSe.")
+    """
+    The size of the data is: 74
+
+    The content of the data is: This is A gooD test CaSe.
+
+    The size of the encoded data is: 40
+
+    The content of the encoded data is: b'111011000101001100101001100111110001011011101111011001100100101111000011010010011100100111110'
+
+    The size of the decoded data is: 74
+
+    The content of the encoded data is: This is A gooD test CaSe.
+    """
+    
+    test("some chinese character 测试")
+    """
+    The size of the data is: 124
+
+    The content of the data is: some chinese character 测试
+
+    The size of the encoded data is: 40
+
+    The content of the encoded data is: b'11100001111111010100111100111100000101111010101001111001001110110010110010101110101000111000'
+
+    The size of the decoded data is: 124
+
+    The content of the encoded data is: some chinese character 测试
+    """
